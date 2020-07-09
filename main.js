@@ -11,32 +11,47 @@ let coin = {
            }
     },
     toString: function() {
-        let Heads = document.createTextNode("Heads")
-        let Tails = document.createTextNode("Tails")
-        let p1 = document.createElement("p1")
-        /* 2. Return the string "Heads" or "Tails", depending on whether
+         /* 2. Return the string "Heads" or "Tails", depending on whether
            "this.state" is 0 or 1. */
-           if (this.state = 0) {
-               p1.appendChild(Heads)
-           } else {
-               p1.appendChild(Tails)
-           }
+         if (this.state === 0) {
+             return "Heads" + "<br>"
+         } else {
+             return "Tails" + "<br>"
+         }
     },
     toHTML: function() {
-        let img = document.createElement('img');
-        let img1 = document.createElement('img1')
-        img.src = './images/heads.jpg'
-        img1.src = './images/tails.jpg'
+        let img1 = document.createElement('img');
+        let img2 = document.createElement('img');
+        let img3 = document.createElement('img')
+        img1.src = './images/heads.jpg'
+        img2.src = './images/tails.jpg'
         /* 3. Set the properties of this image element to show either face-up
            or face-down, depending on whether this.state is 0 or 1.*/
        
-        if (this.state = 0) {
-            document.body.append(img)
+        if (this.state === 0) {
+            img3 = img1
         } else {
-            document.body.appendChild(img1)
+            img3 = img2
+        } return img3
+    },
+    display20Flips: function() {
+       for (let index = 0; index < 20; index = index + 1){
+           coin.flip()
+           document.write(coin.toString())
+       }
+    },
+    display20Images: function() {
+        for (let i = 0; i < 20; i = i + 1){
+            coin.flip()
+            coin.toHTML
+            document.body.appendChild(img3)
+            
         }
     }
 };
 
 coin.flip()
-console.log(coin)
+console.log(coin.toString())
+document.body.append(coin.toHTML())
+console.log(coin.display20Flips())
+console.log(coin.display20Images())
